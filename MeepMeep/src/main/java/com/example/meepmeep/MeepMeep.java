@@ -8,7 +8,6 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-
 public class MeepMeep {
     public static void main(String[] args) {
         com.noahbres.meepmeep.MeepMeep meepMeep = new com.noahbres.meepmeep.MeepMeep(800);
@@ -16,8 +15,16 @@ public class MeepMeep {
         RoadRunnerBotEntity myBot = new DefaultBotBuilder(meepMeep)
                 .setConstraints(60, 60, Math.toRadians(180), Math.toRadians(180), 15)
                 .followTrajectorySequence(drive ->
-                        drive.trajectorySequenceBuilder(new Pose2d(-38, 61, (π * 3)/2))
-                                .forward(30)
+                        drive.trajectorySequenceBuilder(new Pose2d(15, 63, (π * 3)/2))
+                                .forward(20)
+                                .turn((π)/4)
+                                .forward(4)
+                                .back(9)
+                                .turn(π/4)
+                                .forward(40)
+                                .strafeLeft(15)
+                                .forward(10)
+
                                 .build()
 
                 );
